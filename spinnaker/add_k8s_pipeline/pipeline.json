@@ -1,6 +1,6 @@
 {
-    "name": "REPLACE_APP_NAME Source to Prod",
-    "application": "REPLACE_APP_NAME",
+    "name": "tillgang-frontend Source to Prod",
+    "application": "tillgang-frontend",
     "limitConcurrent": true,
     "keepWaitingPipelines": false,
     "parallel": true,
@@ -20,9 +20,9 @@
                     "provider": "kubernetes",
                     "restartPolicy": null,
                     "targetSize": 1,
-                    "application": "REPLACE_APP_NAME",
+                    "application": "tillgang-frontend",
                     "loadBalancers": [
-                        "REPLACE_APP_NAME-dev"
+                        "tillgang-frontend-dev"
                     ],
                     "podAnnotations": {},
                     "securityGroups": [],
@@ -56,7 +56,7 @@
                                 }
                             ],
                             "imagePullPolicy": "IFNOTPRESENT",
-                            "name": "REPLACE_APP_NAME",
+                            "name": "tillgang-frontend",
                             "imageDescription": {
                                 "imageId": "REPLACE_REGISTRY/REPLACE_REPOSITORY (Tag resolved at runtime)",
                                 "fromTrigger": true,
@@ -107,7 +107,7 @@
             ],
             "cloudProviderType": "kubernetes",
             "cloudProvider": "kubernetes",
-            "cluster": "REPLACE_APP_NAME-dev",
+            "cluster": "tillgang-frontend-dev",
             "continuePipeline": true,
             "failPipeline": false,
             "namespaces": [
@@ -130,7 +130,7 @@
             "requisiteStageRefIds": [
                 "1"
             ],
-            "instructions": "Verify the dev server group looks good. Run `kubectl proxy` and navigate to this url to test: http://localhost:8001/api/v1/proxy/namespaces/default/services/REPLACE_APP_NAME-dev:80/"
+            "instructions": "Verify the dev server group looks good. Run `kubectl proxy` and navigate to this url to test: http://localhost:8001/api/v1/proxy/namespaces/default/services/tillgang-frontend-dev:80/"
         },
         {
             "cloudProvider": "kubernetes",
@@ -141,7 +141,7 @@
             "namespaces": [
                 "default"
             ],
-            "cluster": "REPLACE_APP_NAME-dev",
+            "cluster": "tillgang-frontend-dev",
             "refId": "4",
             "credentials": "my-kubernetes-account",
             "type": "findImage",
@@ -200,13 +200,13 @@
                             },
                             "imageDescription": {
                                 "repository": "Find Image from Dev Cluster",
-                                "cluster": "REPLACE_APP_NAME-dev",
+                                "cluster": "tillgang-frontend-dev",
                                 "stageId": "4",
-                                "imageId": "REPLACE_APP_NAME-dev .*",
+                                "imageId": "tillgang-frontend-dev .*",
                                 "fromContext": true,
                                 "pattern": ".*"
                             },
-                            "name": "REPLACE_APP_NAME",
+                            "name": "tillgang-frontend",
                             "ports": [
                                 {
                                     "hostPort": null,
@@ -229,9 +229,9 @@
                     "securityGroups": [],
                     "targetSize": 1,
                     "loadBalancers": [
-                        "REPLACE_APP_NAME-prod"
+                        "tillgang-frontend-prod"
                     ],
-                    "application": "REPLACE_APP_NAME",
+                    "application": "tillgang-frontend",
                     "restartPolicy": null,
                     "securityContext": null,
                     "provider": "kubernetes",
@@ -254,7 +254,7 @@
             ],
             "cloudProviderType": "kubernetes",
             "cloudProvider": "kubernetes",
-            "cluster": "REPLACE_APP_NAME-prod",
+            "cluster": "tillgang-frontend-prod",
             "namespaces": [
                 "default"
             ],
