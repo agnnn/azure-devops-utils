@@ -16,5 +16,3 @@ This must be executed on a linux VM. You must run 'hal deploy apply' to finish d
 ```bash
 ./install_spinnaker.sh --storage_account_name "sample" --storage_account_key "password"
 ```
-
-## Questions/Comments? azdevopspub@microsoft.com
